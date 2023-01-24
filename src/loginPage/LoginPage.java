@@ -56,5 +56,21 @@ public class LoginPage implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        if(e.getSource() == resetButton){
+            userIDField.setText("");
+            userPasswordField.setText("");
+        }
+
+        if(e.getSource() == loginButton){
+
+            String userID = userIDField.getText();
+            String password = String.valueOf(userPasswordField.getPassword());
+            if(loginInfo.containsKey(userID)){
+                if(loginInfo.get(userID).equals(password)){
+                    messageLabel.setForeground(Color.green);
+                    messageLabel.setText("Login successful!");
+                }
+            }
+        }
     }
 }

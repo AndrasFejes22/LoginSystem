@@ -10,7 +10,7 @@ public class IDAndPassword {
 
     public IDAndPassword() {
 
-        loginInfo.put("Bro", "IOu67");
+        loginInfo.put("Bro", "pizza");
         loginInfo.put("JohnDoe", "tz&gh");
         loginInfo.put("JaneDoe", "CVB456");
         loginInfo.put("Pista", "1234");
