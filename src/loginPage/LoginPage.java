@@ -1,5 +1,7 @@
 package loginPage;
 
+import welcomePage.WelcomePage;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -69,7 +71,14 @@ public class LoginPage implements ActionListener {
                 if(loginInfo.get(userID).equals(password)){
                     messageLabel.setForeground(Color.green);
                     messageLabel.setText("Login successful!");
+                    WelcomePage welcomePage = new WelcomePage();
+                } else {
+                    messageLabel.setForeground(Color.red);
+                    messageLabel.setText("Wrong password!");
                 }
+            } else {
+                messageLabel.setForeground(Color.red);
+                messageLabel.setText("Username not found!");
             }
         }
     }
