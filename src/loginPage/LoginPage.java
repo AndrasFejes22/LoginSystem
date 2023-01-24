@@ -67,8 +67,12 @@ public class LoginPage implements ActionListener {
 
             String userID = userIDField.getText();
             String password = String.valueOf(userPasswordField.getPassword());
-            if(loginInfo.containsKey(userID)){
+            if(loginInfo.containsKey(userID)){ //userID check
                 if(loginInfo.get(userID).equals(password)){
+                    // Check in console:
+                    System.out.println("userID: "+ userID);
+                    System.out.println("loginInfo.get(userID): "+ loginInfo.get(userID));
+
                     messageLabel.setForeground(Color.green);
                     messageLabel.setText("Login successful!");
                     frame.dispose();
@@ -77,7 +81,7 @@ public class LoginPage implements ActionListener {
                     messageLabel.setForeground(Color.red);
                     messageLabel.setText("Wrong password!");
                 }
-            } else {
+            } else { // wrong userID
                 messageLabel.setForeground(Color.red);
                 messageLabel.setText("Username not found!");
             }
